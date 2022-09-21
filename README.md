@@ -39,7 +39,7 @@ https://tours-api.up.railway.app/api/v1/tours
 
 ```
 
-> Get a single tour: GET & PATCH
+> Get a single tour: GET
 
 ```
 https://tours-api.up.railway.app/api/v1/tours/632ab8d7254328307473292d

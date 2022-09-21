@@ -20,6 +20,14 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+app.get("/api_desc", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../public/api_desc.html"));
+});
+
+app.get("/api_docs", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../public/api_docs.html"));
+});
+
 /* Here is the User Routes */
 app.use("/api/v1/test", testRoute);
 app.use("/api/v1/", toursRouter);
