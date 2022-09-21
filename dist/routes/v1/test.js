@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const test_1 = require("../../controllers/test");
+const tours_controller_1 = require("../../controllers/tours.controller");
 const router = (0, express_1.Router)();
-// @route  get api/v1/test
-router.route("/").get(test_1.testRouter.getAllTest).post(test_1.testRouter.createTest);
+// @route  post api/v1/tours
+router.route("/").post(tours_controller_1.toursRouter.createTour);
 exports.default = router;

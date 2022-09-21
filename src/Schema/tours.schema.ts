@@ -14,6 +14,12 @@ const TourSchema = new Schema(
       type: String,
       required: true,
     },
+    imageUrl: {
+      type: String,
+      required: true,
+      validate:
+        /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/,
+    },
     price: {
       type: Number,
       required: true,
@@ -22,7 +28,21 @@ const TourSchema = new Schema(
     duration: {
       type: Number,
       required: true,
-      minLength: [0, "Duration cannot be less than 0"],
+      min: [0, "Duration cannot be less than 0"],
+      max: [23, "Duration cannot be more than 23"],
+      validate: {
+        validator: Number.isInteger,
+        message: "{VALUE} is not an integer value",
+      },
+    },
+    view: {
+      type: Number,
+      default: 0,
+    },
+    maxGroupSize: {
+      type: Number,
+      required: true,
+      min: [0, "Max group size cannot be less than 0"],
       validate: {
         validator: Number.isInteger,
         message: "{VALUE} is not an integer value",

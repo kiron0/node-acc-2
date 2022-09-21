@@ -13,6 +13,7 @@ exports.app = app;
 /* middleware  */
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
 /* here will be all the imports routes */
 const test_1 = __importDefault(require("./routes/v1/test"));
 const tourRouter_1 = __importDefault(require("./routes/v1/tourRouter"));
@@ -22,7 +23,7 @@ app.get("/", (req, res) => {
 });
 /* Here is the User Routes */
 app.use("/api/v1/test", test_1.default);
-app.use("/api/v1/tour", tourRouter_1.default);
+app.use("/api/v1/", tourRouter_1.default);
 // 404 response
 app.all("*", (req, res) => {
     res.status(404).send({

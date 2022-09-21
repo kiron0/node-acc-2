@@ -35,55 +35,62 @@
 > Get all tours: GET & POST
 
 ```
-https://tours.up.railway.app/api/v1/tours
+https://tours-api.up.railway.app/api/v1/tours
 
 ```
 
 > Get a single tour: GET & PATCH
 
 ```
-https://tours.up.railway.app/api/v1/tours/632ab8d7254328307473292d
+https://tours-api.up.railway.app/api/v1/tours/632ab8d7254328307473292d
+
+```
+
+> Get a single tour: PATCH
+
+```
+https://tours-api.up.railway.app/api/v1/tour/632ab8d7254328307473292d
 
 ```
 
 > Get all tours with pagination: GET
 
 ```
-https://tours.up.railway.app/api/v1/tours?page=2&limit=3
+https://tours-api.up.railway.app/api/v1/tours?page=2&limit=3
 
 ```
 
 > Get all tours with greater than sort: GET
 
 ```
-https://tours.up.railway.app/api/v1/tours?sort=price[gt:-200]
+https://tours-api.up.railway.app/api/v1/tours?sort=price[gt:-200]
 
 ```
 
 > Get all tours with less than sort & pagination: GET
 
 ```
-https://tours.up.railway.app/api/v1/tours?page=1&sort=price[gt:-200]
+https://tours-api.up.railway.app/api/v1/tours?page=1&sort=price[gt:-200]
 
 ```
 
 > Get top 3 viewed tours: GET
 
 ```
-https://tours.up.railway.app/api/v1/tour/trending
+https://tours-api.up.railway.app/api/v1/tour/trending
 
 ```
 
 > Get top 3 cheapest tours: GET
 
 ```
-https://tours.up.railway.app/api/v1/tour/cheapest
+https://tours-api.up.railway.app/api/v1/tour/cheapest
 
 ```
 
 > Get all tours with all type of sort & pagination: GET
 
 ```
-https://tours.up.railway.app/api/v1/tours?sort=price[gt:-200]&status=unavailable&page=1&limit=5
+https://tours-api.up.railway.app/api/v1/tours?sort=price[gt:-200]&status=unavailable&page=1&limit=5
 
 ```
