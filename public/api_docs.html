@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="https://i.ibb.co/gRFDkNs/logo-Phero.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
-  <title>Node ACC 1</title>
+  <title>Node ACC 2</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -21,22 +21,111 @@
 </head>
 
 <body class="bg-black">
-  <div class="flex flex-col justify-center items-center h-screen">
-        <div class="px-6 md:px-0">
-          <p class="py-4 text-white text-center text-lg">Here are the available routes</p>
-          <div class="grid grid-cols-1 gap-3">
-                    <a class="text-white btn btn-primary" href="/">/Home</a>
-                    <a class="text-white btn btn-neutral"
-                              href="/api/v1/tours">[GET] /tours</a>
-                    <a class="text-white btn btn-neutral"
-                              href="/api/v1/tours">[POST] /tours</a>
-                    <a class="text-white btn btn-neutral" href="/api/v1/tours/632adeffa70389be7895a9df">[GET] /tours/:id</a>
-                    <a class="text-white btn btn-neutral" href="/api/v1/tours/632adeffa70389be7895a9df">[PATCH] /tour/:id</a>
-                    <a class="text-white btn btn-neutral" href="/api/v1/tour/trending">[GET] /tour/trending</a>
-                    <a class="text-white btn btn-neutral" href="/api/v1/tour/cheapest">[GET] /tour/cheapest</a>
-          </div>
-      <div class="flex flex-col justify-center items-center">
-          <a href="https://github.com/kiron0" target="_blank" class="btn btn-error w-52 mt-6 mb-3 text-white">Follow Me
+  <div class="bg-black h-screen overflow-x-hidden">
+        <div class="flex flex-col items-center px-6 lg:px-0 text-white py-12 bg-black">
+          <h1 class="text-center text-[28px] lg:text-5xl">Welcome to Tours API Description
+                  </h1>
+
+          <p class="text-center md:text-center md:text-start text-xl mt-8">Info for POST types</p>
+          
+ 
+          <p class="text-center md:text-start text-success">
+                    { <br/>
+                              name: String, <br/>
+                              description: String,<br/>
+                              imageUrl: String,<br/>
+                              price: Number,<br/>
+                              duration: Number,<br/>
+                              view: Number,<br/>
+                              maxGroupSize: Number,<br/>
+                              status: String,<br/>
+                          }
+          </p>
+  
+          <p class="text-center md:text-center md:text-start text-xl mt-8">Dummy Data for POST</p>
+
+          <p class="text-center md:text-start text-success">
+                    {<br/>
+                              "name": "Hello World",<br/>
+                              "description": "This is a hello description",<br/>
+                              "imageUrl": "https://cdn.pixabay.com"<br/>
+                              "price": 25,<br/>
+                              "duration": 5,<br/>
+                              "view": 0,<br/>
+                              "maxGroupSize": 15,<br/>
+                              "status": "available",<br/>
+                            } 
+          </p>
+
+          <p class="text-center md:text-start text-xl px-2">Get api end points</p>
+          > 
+          <p class="text-center text-warning md:text-start text-md px-2">Get all tours: GET & POST</p>
+         
+          
+          <a href="/api/v1/tours" class="px-2 text-center md:text-start">
+                    /api/v1/tours
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get a single tour: GET</p>
+          
+          <a href="/api/v1/tours/632ab8d7254328307473292d" class="px-2 text-center md:items-start">
+                   
+                    /api/v1/tours
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get a single tour: PATCH</p>
+
+          <a href="/api/v1/tour/632ab8d7254328307473292d" class="container text-center">
+                    /api/v1/tour/632ab8d7254328307473292d
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get all tours with pagination: GET</p>
+    
+          <a href="/api/v1/tours?page=2&limit=3" class="px-2">
+                    /api/v1/tours?page=2&limit=3
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get all tours with greater than sort: GET</p>
+
+          
+          <a href="/api/v1/tours?page=2&limit=3" class="px-2">
+                    /api/v1/tours?sort=price[gt:-200]
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get all tours with less than sort & pagination: GET</p>
+          
+          
+          <a href="/api/v1/tours?page=1&sort=price[gt:-200]" class="px-2">
+                    /api/v1/tours?page=1&sort=price[gt:-200]
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get top 3 viewed tours: GET</p>
+          
+      
+          
+          <a href="/api/v1/tour/trending" class="px-2">
+                    /api/v1/tour/trending
+          </a>
+          
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get top 3 cheapest tours: GET</p>
+         
+          
+          <a href="/api/v1/tour/cheapest" class="px-2">
+                    /api/v1/tour/cheapest
+          </a>
+          >
+          <p class="text-center text-warning md:text-start text-md px-2">Get all tours with all type of sort & pagination: GET</p>
+          
+          
+        
+          <a href="/api/v1/tours?sort=price[gt:-200]&status=unavailable&page=1&limit=5" class="container text-center">
+                   /api/v1/tours?sort=price[gt:-200]&status=unavailable&page=1&limit=5
+          </a>
+          
+      <div class="flex flex-col justify-center items-center gap-3 py-6">
+          <a class="text-white btn btn-primary w-36" href="/">Back to Home</a>
+          <a href="https://github.com/kiron0" target="_blank" class="btn btn-error w-52 mb-3 text-white">Follow Me
                     On
                     GitHub</a>
       </div>

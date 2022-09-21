@@ -20,12 +20,12 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-app.get("/api_desc", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "../public/api_desc.html"));
-});
-
 app.get("/api_docs", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../public/api_docs.html"));
+});
+
+app.get("/api_routes", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../public/api_routes.html"));
 });
 
 /* Here is the User Routes */

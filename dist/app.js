@@ -21,6 +21,12 @@ const tourRouter_1 = __importDefault(require("./routes/v1/tourRouter"));
 app.get("/", (req, res) => {
     res.sendFile(path_1.default.join(__dirname, "../public/index.html"));
 });
+app.get("/api_docs", (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, "../public/api_docs.html"));
+});
+app.get("/api_routes", (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, "../public/api_routes.html"));
+});
 /* Here is the User Routes */
 app.use("/api/v1/test", test_1.default);
 app.use("/api/v1/", tourRouter_1.default);
